@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"iris-psql/models"
 	"iris-psql/storages"
 	"log"
@@ -25,7 +24,6 @@ type Repository struct {
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
-		fmt.Println(err)
 		log.Fatal(err)
 	}
 
@@ -40,13 +38,11 @@ func main() {
 
 	db, err := storages.NewConnection(config)
 	if err != nil {
-		fmt.Println("could not load the database")
 		log.Fatal("could not load the database")
 	}
 
 	err = models.MigrateCustomerData(db)
 	if err != nil {
-		fmt.Println("could not migrate db")
 		log.Fatal("could not migrate db")
 	}
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"strconv"
 
 	"github.com/kataras/iris/v12"
@@ -21,9 +21,9 @@ func (r *Repository) addCustomerData(ctx iris.Context) {
 
 	err := r.DB.Create(&customer).Error
 	if err != nil {
-		fmt.Println("System:", err)
+		log.Print("System:", err)
 	} else {
 		ctx.JSON(iris.Map{"message": "new customer added successfully"})
-		fmt.Println("System: new customer added successfully")
+		log.Print("System: new customer added successfully")
 	}
 }

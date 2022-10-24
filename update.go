@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"iris-psql/models"
+	"log"
 	"strconv"
 
 	"github.com/kataras/iris/v12"
@@ -22,11 +22,11 @@ func (r *Repository) updateCustomerData(ctx iris.Context) {
 		Email: inputEmail,
 	}
 
-	fmt.Printf("System: get target id [%v]\n", id)
+	log.Printf("System: get target id [%v]\n", id)
 
 	if id == "" {
 		ctx.JSON(iris.Map{"message": "id cannot be empty"})
-		fmt.Println("System: id cannot be empty")
+		log.Print("System: id cannot be empty")
 		return
 	}
 
@@ -34,9 +34,9 @@ func (r *Repository) updateCustomerData(ctx iris.Context) {
 
 	if err != nil {
 		ctx.JSON(iris.Map{"message": "could not get the customer data"})
-		fmt.Println("System: could not get the customer data")
+		log.Print("System: could not get the customer data")
 	} else {
 		ctx.JSON(iris.Map{"data": customerModels})
-		fmt.Println("System: customer id fetched successfully")
+		log.Print("System: customer id fetched successfully")
 	}
 }

@@ -1,14 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/kataras/iris/v12"
 )
 
 func defaultGreet(ctx iris.Context) {
-	fmt.Println("System: greeting message sent")
 	ctx.JSON(iris.Map{"message": "Welcome customer system"})
+	log.Print("System: greeting message sent")
 }
 
 func (r *Repository) firstData() {

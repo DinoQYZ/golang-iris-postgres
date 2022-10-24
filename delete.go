@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"iris-psql/models"
+	"log"
 
 	"github.com/kataras/iris/v12"
 )
@@ -15,7 +15,7 @@ func (r *Repository) deleteCustomerData(ctx iris.Context) {
 
 	if id == "" {
 		ctx.JSON(iris.Map{"message": "id cannot be empty"})
-		fmt.Println("System: id cannot be empty")
+		log.Print("System: id cannot be empty")
 		return
 	}
 
@@ -23,9 +23,9 @@ func (r *Repository) deleteCustomerData(ctx iris.Context) {
 
 	if err.Error != nil {
 		ctx.JSON(iris.Map{"message": "could not delete customer data"})
-		fmt.Println("System: could not delete customer data")
+		log.Print("System: could not delete customer data")
 	} else {
 		ctx.JSON(iris.Map{"message": "customer data deleted successfully"})
-		fmt.Println("System: customer data deleted successfully")
+		log.Print("System: customer data deleted successfully")
 	}
 }
