@@ -2,9 +2,7 @@ module iris-psql
 
 go 1.18
 
-require (
-	github.com/kataras/iris/v12 v12.1.8
-)
+require github.com/kataras/iris/v12 v12.1.8
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
@@ -59,6 +57,6 @@ require (
 	gopkg.in/ini.v1 v1.51.1 // indirect
 	gopkg.in/yaml.v2 v2.2.4 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gorm.io/driver/postgres v1.3.10 
+	gorm.io/driver/postgres v1.3.10
 	gorm.io/gorm v1.23.10
 )
