@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"iris-gorm/models"
-	"iris-gorm/storages"
+	"iris-psql/models"
+	"iris-psql/storages"
 	"log"
 	"os"
 
@@ -67,7 +67,7 @@ func main() {
 
 func (r *Repository) SetupRoutes(app *iris.Application) {
 	//default html
-	app.RegisterView(iris.HTML("./views", ".html"))
+	//app.RegisterView(iris.HTML("./views", ".html"))
 
 	//default
 	app.Get("/", defaultGreet)

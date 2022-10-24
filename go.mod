@@ -1,4 +1,4 @@
-module iris-gorm
+module iris-psql
 
 go 1.18
 

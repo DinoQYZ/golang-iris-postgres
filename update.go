@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"iris-gorm/models"
+	"iris-psql/models"
 	"strconv"
 
 	"github.com/kataras/iris/v12"
