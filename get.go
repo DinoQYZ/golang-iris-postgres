@@ -14,11 +14,11 @@ func (r *Repository) getCustomerData(ctx iris.Context) {
 
 	err := r.DB.Find(customerModels).Error
 	if err != nil {
-		ctx.JSON(iris.Map{"message": "fail to get customers data"})
-		log.Print("System: fail to get customers data")
+		ctx.JSON(iris.Map{"message": "fail to get customer data"})
+		log.Print("System: fail to get customer data")
 	} else {
 		ctx.JSON(iris.Map{"data": customerModels})
-		log.Print("System: customers data fetched successfully")
+		log.Print("System: customer data fetched successfully")
 	}
 }
 

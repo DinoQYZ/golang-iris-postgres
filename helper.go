@@ -7,7 +7,7 @@ import (
 )
 
 func defaultGreet(ctx iris.Context) {
-	ctx.JSON(iris.Map{"message": "Welcome customer system"})
+	ctx.JSON(iris.Map{"message": "Welcome to customer system"})
 	log.Print("System: greeting message sent")
 }
 

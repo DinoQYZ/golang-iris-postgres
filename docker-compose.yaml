@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  psql:
+    container_name: psql
+    image: postgres:12
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=dino
+      - POSTGRES_PASSWORD=dinopwd
+      - POSTGRES_DB=dino
+    volumes:
+      - /postgres_data:/var/lib/postgresql/data
+
+  goapp:
+    container_name: goapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    depends_on:
+      - psql
+    volumes:
+      - .:/app

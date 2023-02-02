@@ -63,7 +63,7 @@ func main() {
 
 func (r *Repository) SetupRoutes(app *iris.Application) {
 	//default html
-	//app.RegisterView(iris.HTML("./views", ".html"))
+	app.RegisterView(iris.HTML("./views", ".html"))
 
 	//default
 	app.Get("/", defaultGreet)
